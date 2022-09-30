@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu primeiro site</title>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .inline{
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body x-data="{ 
+    lorem:false,
+    marque:false,
+    lista:false,
+    recursive_image:false,
+    audio:false,
+    video:false,
+    ex002:false,
+    divs:true,
+   }" >
+    <div style="display: flex; flex-wrap: wrap; justify-content:space-between;" >
+      <h1>Menu:</h1>
+      <button class="btn-default" @click="lorem = !lorem" :class="lorem ? 'bg-active' : 'bg-inative'" >Lorem</button>
+      <button class="btn-default" @click="marque = !marque" :class="marque ? 'bg-active' : 'bg-inative'">marque</button>
+      <button class="btn-default" @click="lista = !lista" :class="lista ? 'bg-active' : 'bg-inative'">Lista</button>
+      <button class="btn-default" @click="recursive_image= !recursive_image" :class="recursive_image ? 'bg-active' : 'bg-inative'">Imagem recursiva</button>
+      <button class="btn-default" @click="audio= !audio" :class="audio ? 'bg-active' : 'bg-inative'">Audio</button>
+      <button class="btn-default" @click="video= !video" :class="video ? 'bg-active' : 'bg-inative'">Video</button>
+      <button class="btn-default" @click="ex002= !ex002" :style="ex002 ? 'background-color: green' : ''">ex002</button>
+      <button class="btn-default" @click="divs= !divs" :style="divs ? 'background-color: green' : ''">divs</button>
+    </div>
+
+    <div x-show="lorem" >
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam quia dolorum
+        debitis alias sunt officiis facilis, sed eius adipisci quisquam, error
+        illum unde, aperiam culpa deleniti et laborum. Repellendus, repellat.
+      </p>
+    </div>
+
+    <marquee behavior="" scrollamount="20" direction="" x-show="marque" >
+      <div>
+        <img
+          width="300"
+          height="300"
+          src="imagens/Um.jpg"
+          alt="Gente"
+          title="asdfjnjsdfj"
+        />
+        <img
+          width="300"
+          height="300"
+          src="imagens/dois.jpg"
+          alt=" Outra gente"
+          title="asfdkkasnf"
+        />
+        <img
+          width="300"
+          height="300"
+          src="imagens/tres.jpg"
+          alt="Mais uma gente"
+          title="sadfasdfasd"
+        />
+      </div>
+    </marquee>
+    
+    <div x-show="lista" >
+      <ul type="circle">
+        <li>
+          <strong>Pães</strong>
+          <ul>
+            <li>Francês</li>
+            <li>Pão com carne</li>
+          </ul>
+        </li>
+        <li>Carnes</li>
+        <li>Legumes</li>
+      </ul>
+      <ol type="I" >
+        <li>Acordar</li>
+        <li>Tomar banho</li>
+        <li>Sair de casa</li>
+        <li>
+          <strong>No trabalho:</strong>
+          <ol>
+            <li>
+              Ligar o pc
+            </li>
+            <li>
+              Encheo o saco de alguem
+            </li>
+          </ol>
+        </li>
+      </ol>
+          </p>
+    </div>
+
+    <div x-show="recursive_image">
+      <picture>
+        <source media="(max-width: 768px )" srcset="imagens/foto-p.png" type="image/png" >
+        <source media="(max-width: 1050px )" srcset="imagens/foto-m.png" type="image/png" >
+        <img src="imagens/foto-g.png" alt="Tamanho G">
+      </picture>
+    </div>
+
+    <div x-show="audio" >
+      <h1>Inserindo Áudios</h1>
+      <audio preload="auto" controls >
+        <source src="musicas/enemy.mp3" type="audio/mpeg">
+        <p>
+          Seu navegador não reproduz áudios. Baixe a música clicando <a href="musicas/enemy.mp3" download="coco_de_galinha"> aqui</a>..
+        </p>
+      </audio>
+    </div>
+
+    <div x-show="video" >
+      <h1>Vídeos</h1>
+      <h2>
+        Vídeos internos
+      </h2>
+        <video controls poster="" width="650" >
+          <source src="videos/pizza.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div x-show="ex002">
+      <h1>Meu título</h1>
+      <p id="p1" >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, illo laudantium. Reiciendis nesciunt consectetur iure deserunt odit corrupti excepturi, est velit doloribus autem aliquam doloremque iusto provident maxime, sapiente exercitationem.
+      </p>
+      <h2>Sub título</h2>
+      <p id="p2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non amet eius odio debitis reprehenderit, mollitia ullam quo fugit rerum laudantium unde, nihil magnam vel omnis nam qui numquam magni aspernatur.
+      </p>
+      <h2>Segundo sub título</h2>
+      <p id="p3">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate culpa tenetur illum veritatis reiciendis perferendis magni debitis dolores. Reiciendis, corrupti. Iusto corrupti dolorum ea enim odio esse est placeat minus.
+      </p>
+    </div>
+
+    <div x-show="divs">
+      <hr>
+      <h1>Trabalhando com display flex</h1>
+      <div id="container">
+        <div class="div_positions spacing-x-2"
+          style="display:flex; flex-wrap: wrap; justify-content: space-around; align-items: center;"
+        >
+
+          <div class="div_filho"></div>
+          <div class="div_filho"></div>
+          <div class="div_filho"></div>
+          <div class="div_filho"></div>
+
+        </div>
+        <div class="div_positions spacing-x-2"></div>
+        <div class="div_positions spacing-x-2"></div>
+        <div class="div_positions spacing-x-2"></div>
+      </div>
+      
+      <hr>
+      <h1>Trabalhando com posições relativas e absolutas</h1>
+      <div 
+        style="position: relative; width: 400px; height: 300px ;margin-left: auto; margin-right: auto; margin-top: 30px; background-color: silver; " 
+        >
+        <div class="div_positions" style="position: relative;"></div>
+        <div class="div_positions" style="position: relative; left: 100px;" ></div>
+        <div class="div_positions" style="position: relative; left: 200px; bottom: 200px;"></div>
+        <div class="div_positions" style="position: relative; left: 300px; bottom: 200px;"></div>
+        
+        <div class="div_positions" style="position: relative; bottom: 200px;"></div>
+        <div class="div_positions" style="position: relative; bottom: 300px; left: 200px;">
+        </div>
+    </div>
+    </div>
+  </body>
+</html>

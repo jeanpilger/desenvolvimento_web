@@ -1,0 +1,184 @@
+@charset 'UTF-8';
+
+:root{
+    --cor0:#2A2F35;
+    --cor1:#FF6335;
+    --cor2:#F3F3F3;
+    --cor3:#11161C;
+    --cor4:#aaa;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background-color: var(--cor2);
+}
+header{
+    background-color: var(--cor0);
+    color: var(--cor2);
+    height: 70px;
+    position: relative;
+    z-index: 4;
+}
+#conteiner-header{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 1500px; /*aqui*/
+    margin: auto;
+    min-height: 70px;
+}
+#logo{
+    display: flex;
+    align-items: center;
+}
+#logo > img{
+    width: 50px;
+}
+#conteiner-header > p{
+    margin-left: 20px;
+    font-size: 16pt;
+    text-transform: uppercase;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: auto ;
+}
+label[for='botao-menu']{
+    background-color: var(--cor0);
+    color: var(--cor2);
+    font-size: 30px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-left: auto;
+    display: none;
+    position: relative;
+    z-index: 5;
+}
+.navItens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: var(--cor0);
+    position: relative;          
+}
+.navItens > a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;  
+    color:var(--cor4);
+    height: 68px;
+    width: 100%;
+    padding-bottom: 2px;
+}
+.navItens > a:hover{
+    background-color: var(--cor3);
+    transition:all .4s;
+    border-bottom: solid 1px #ccc;    
+}
+.navItens > a:nth-child(1):hover{
+    box-shadow: inset 0 3px 0 var(--cor1);
+}
+.navItens > a:visited{
+    color: var(--cor2)
+}
+.submenu{
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .4s ease-out;
+}
+.submenu > .navItens > a{
+    background-color:var(--cor3);
+    border-bottom: solid 1px #ccc;
+}
+.submenu > .navItens > a:hover{    
+    background-color: var(--cor3);
+    transition:all .4s;    
+}
+.navItens:hover .submenu{
+    max-height: 200px; 
+    transition: max-height .4s ease-in;
+}
+#imageBackground{
+    width: 100%;
+    height: 480px ;
+    /* background-image: url('../imagens/background.jpg'); */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../imagens/background.jpg'); /* aqui */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: -10;
+}
+#textoBackground{
+    color: var(--cor2);
+    text-align: center;
+    max-width: 1500px; /*aqui*/
+}
+
+#textoBackground > p:nth-child(2n + 1){
+    font-weight: lighter;  
+    font-size: 24px;      
+}
+#textoBackground > p:nth-of-type(2){ /*p~p*/
+    font-size: 50px;
+    text-transform: uppercase;
+    border-top: 2px solid var(--cor2);
+    border-bottom: 2px solid var(--cor2);   
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px 10px 15px 10px;   
+}
+main{
+    top: -50px;
+    width: 80%;
+    max-width: 1500px; /*aqui*/
+    height: 100vh;
+    margin: auto;
+    background-color: white;
+    position: relative;
+    border-top: 3px solid var(--cor1);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+.section-services-works{
+    border-top: 4px solid var(--cor2);
+    margin: 30px auto 0px auto;
+    max-width: 95%;
+}
+@media (max-width: 850px){
+    .menu{
+        top:-210px;
+        right: 0;
+        transition: all .4s;
+        flex-direction: column;
+        position: absolute;
+    }
+    label[for='botao-menu']{
+        display: block;
+    }
+    .active{
+        top: 70px;
+    }
+    .submenu{
+        position: relative;
+    }
+}

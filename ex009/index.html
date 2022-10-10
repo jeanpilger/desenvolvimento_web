@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div id="conteiner-header">
+            <div id="logo"><img src="imagens/comece.png" alt=""></div>
+            <p>Desenvolvedor Web</p>
+            <nav class="menu">
+                <div class="navItens"><a href="#">Itens 1</a>
+                    <div class="submenu">
+                        <div class="navItens"><a href="#">Sub Item 1</a></div>
+                        <div class="navItens"><a href="#">Sub Item 2</a></div>
+                    </div>
+                </div>
+                <div class="navItens"><a href="#">Itens 2</a>
+                    <div class="submenu">
+                        <div class="navItens"><a href="#">Sub Item 1</a></div>
+                        <div class="navItens"><a href="#">Sub Item 2</a></div>
+                    </div>
+                </div>
+                <div class="navItens"><a href="#">Itens 3</a>
+                    <div class="submenu">
+                        <div class="navItens"><a href="#">Sub Item 1</a></div>
+                        <div class="navItens"><a href="#">Sub Item 2</a></div>
+                    </div>
+                </div>
+            </nav>
+            <label onclick="menuResponsivo()" for="botao-menu">&#9776;</label>
+        </div>
+    </header>
+    <figure id="imageBackground">
+        <div id="textoBackground">
+            <p><strong>Hello</strong>, We Are</p>
+            <p><strong>FACE DESIGN</strong></p>
+            <p>And <strong>Trust Us</strong>, You Want To <strong>Hire Us</strong></p>
+        </div>
+    </figure>
+    <main>
+        <section class="section-services-works">
+            <div class="conteudo-services"></div>
+            <div class="conteudo-services"></div>
+            <div class="conteudo-services"></div>
+            <div class="conteudo-services"></div>
+        </section>
+
+        <section class="section-services-works">
+            
+        </section>
+    </main>
+    <script>
+        function menuResponsivo(){
+            var menu = document.querySelector('.menu')
+            menu.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>

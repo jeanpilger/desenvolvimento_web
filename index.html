@@ -24,16 +24,15 @@
     ex002:false,
     divs:true,
    }" >
-    <div style="display: flex; flex-wrap: wrap; justify-content:space-between;" >
-      <h1>Menu:</h1>
-      <button class="btn-default" @click="lorem = !lorem" :class="lorem ? 'bg-active' : 'bg-inative'" >Lorem</button>
-      <button class="btn-default" @click="marque = !marque" :class="marque ? 'bg-active' : 'bg-inative'">marque</button>
-      <button class="btn-default" @click="lista = !lista" :class="lista ? 'bg-active' : 'bg-inative'">Lista</button>
-      <button class="btn-default" @click="recursive_image= !recursive_image" :class="recursive_image ? 'bg-active' : 'bg-inative'">Imagem recursiva</button>
-      <button class="btn-default" @click="audio= !audio" :class="audio ? 'bg-active' : 'bg-inative'">Audio</button>
-      <button class="btn-default" @click="video= !video" :class="video ? 'bg-active' : 'bg-inative'">Video</button>
-      <button class="btn-default" @click="ex002= !ex002" :style="ex002 ? 'background-color: green' : ''">ex002</button>
-      <button class="btn-default" @click="divs= !divs" :style="divs ? 'background-color: green' : ''">divs</button>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; " >
+      <button class="btn-default gap-1" @click="lorem = !lorem" :class="lorem ? 'bg-active' : 'bg-inative'" >Lorem</button>
+      <button class="btn-default gap-1" @click="marque = !marque" :class="marque ? 'bg-active' : 'bg-inative'">marque</button>
+      <button class="btn-default gap-1" @click="lista = !lista" :class="lista ? 'bg-active' : 'bg-inative'">Lista</button>
+      <button class="btn-default gap-1" @click="recursive_image= !recursive_image" :class="recursive_image ? 'bg-active' : 'bg-inative'">Imagem recursiva</button>
+      <button class="btn-default gap-1" @click="audio= !audio" :class="audio ? 'bg-active' : 'bg-inative'">Audio</button>
+      <button class="btn-default gap-1" @click="video= !video" :class="video ? 'bg-active' : 'bg-inative'">Video</button>
+      <button class="btn-default gap-1" @click="ex002= !ex002" :style="ex002 ? 'background-color: green' : ''">ex002</button>
+      <button class="btn-default gap-1" @click="divs= !divs" :style="divs ? 'background-color: green' : ''">divs</button>
     </div>
 
     <div x-show="lorem" >
@@ -148,8 +147,7 @@
       <hr>
       <h1>Trabalhando com display flex</h1>
       <div id="container">
-        <div class="div_positions spacing-x-2"
-          style="display:flex; flex-wrap: wrap; justify-content: space-around; align-items: center;"
+        <div class="div_positions spacing-x-2 full-center"
         >
 
           <div class="div_filho"></div>
@@ -158,8 +156,28 @@
           <div class="div_filho"></div>
 
         </div>
-        <div class="div_positions spacing-x-2"></div>
-        <div class="div_positions spacing-x-2"></div>
+        <div class="div_positions spacing-x-2 full-center">
+          <div class="div_filho"></div>
+          <div class="div_filho"></div>
+          <div class="div_filho"></div>
+          <div class="div_filho"></div>
+        </div>
+        <div class="div_positions spacing-x-2 full-center">
+          <div class="div_filho full-center">
+            <div class="div_filho_2 full-center ">
+              <div class="div_filho"></div>
+              <div class="div_filho"></div>
+              <div class="div_filho"></div>
+              <div class="div_filho"></div>
+            </div>
+            <div class="div_filho_2"></div>
+            <div class="div_filho_2"></div>
+            <div class="div_filho_2"></div>
+          </div>
+          <div class="div_filho"></div>
+          <div class="div_filho"></div>
+          <div class="div_filho"></div>
+        </div>
         <div class="div_positions spacing-x-2"></div>
       </div>
       

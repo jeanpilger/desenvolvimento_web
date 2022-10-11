@@ -152,7 +152,7 @@ main{
     top: -50px;
     width: 80%;
     max-width: 1500px; /*aqui*/
-    height: 100vh;
+    height: max-content;
     margin: auto;
     background-color: white;
     position: relative;
@@ -163,6 +163,60 @@ main{
     border-top: 4px solid var(--cor2);
     margin: 30px auto 0px auto;
     max-width: 95%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.conteudo-services{
+    max-width: 305px;
+    min-width: 210px;
+    text-align: justify;
+    margin: 20px auto 0px auto;
+}
+#h1-conteudo-services{
+    height: 92px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 16pt;
+}
+#h1-conteudo-services h1{
+    margin-bottom: 10px;
+    font-weight: lighter;
+    color: var(--cor4);
+}
+.titulo-services > h2{
+    margin-bottom: 10px;
+    font-size: 12pt;
+}
+.section-botao{
+    text-decoration: nome;
+    color: var(--cor2);
+    background-color: var(--cor3);
+    padding: 10px 20px;
+    margin-top: 4px;
+    width: 90px;
+    border-radius: 2px;
+    display: flex;
+}
+.titulo-services{
+    display: flex;
+    align-items: center;
+}
+.titulo-services img{
+    margin-right: 10px;
+}
+.conteudo-services img{
+    width: 40px;
+}
+#works-slides{
+    display: flex;
+}
+.works-imagens{
+    max-width: 305px;
+    min-width: 210px;
+    text-align: justify;
+    margin: 20px auto 0px auto;
 }
 @media (max-width: 850px){
     .menu{
